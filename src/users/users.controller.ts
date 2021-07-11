@@ -3,7 +3,7 @@ import { FileInterceptor, MulterModule } from '@nestjs/platform-express';
 import { UserEntity } from './user.entity';
 import { UsersService } from './users.service';
 import { customName } from './utils/customname';
-import { diskStorage } from 'Multer';
+import { diskStorage } from 'multer';
 
 
 
