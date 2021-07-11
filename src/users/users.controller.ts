@@ -53,7 +53,7 @@ export class UsersController {
 
         return{
             status:HttpStatus.OK,
-            message:"Ayuda por favor estoy al borde del suicidio",
+            message:"The image has been uploaded",
             data:response
         }
     }
