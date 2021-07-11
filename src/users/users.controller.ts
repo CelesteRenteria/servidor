@@ -1,8 +1,13 @@
 import { Body, Controller, Delete, Get, HttpStatus, Param, Patch, Post, Put, UploadedFile, UseInterceptors } from '@nestjs/common';
-import { FileInterceptor } from '@nestjs/platform-express';
+import { FileInterceptor, MulterModule } from '@nestjs/platform-express';
 import { userInfo } from 'os';
 import { UserEntity } from './user.entity';
 import { UsersService } from './users.service';
+import { customName } from './utils/customname';
+import { diskStorage } from 'Multer';
+import { json } from 'express';
+
+
 
 @Controller('users')
 export class UsersController {
@@ -29,29 +34,30 @@ export class UsersController {
     @Post('upload')
     @UseInterceptors(
         FileInterceptor('image',{
-            storage:diskStorage({
-                destination:'./avatars'
+            storage: diskStorage({
+                destination:'./avatars', 
+                filename:customName
             })
+            
         })
     )
-    async uploadFile(@Body() user:UserEntity, @UploadedFile
-    () file){
-        user.avatar=file.filename;
-        
+    async uploadFile(@Body() user:UserEntity, @UploadedFile() file){
+        user.avatar = file.filename;
+
         await this.service.createUser(JSON.parse(JSON.stringify(user)));
 
-        const response = {
+        const response ={
             originalName: file.originalname,
             finalName: file.filename
         }
 
-        return {
+        return{
             status:HttpStatus.OK,
-            message:"Image has been uploaded",
+            message:"Ayuda por favor estoy al borde del suicidio",
             data:response
         }
     }
-    
+
     @Put()
     updateUser(@Body() user:UserEntity){
         this.service.updateUser(user);
@@ -67,10 +73,5 @@ export class UsersController {
         this.service.deleteUser(params.id);
         
     }
-}
-
-
-function diskStorage(arg0: { destination: string; }): any {
-    throw new Error('Function not implemented.');
 }
 
