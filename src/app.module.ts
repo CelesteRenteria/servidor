@@ -5,6 +5,10 @@ import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { YachtsController } from './yachts/yachts.controller';
+import { ServicesController } from './services/services.controller';
+import { CrewsController } from './crews/crews.controller';
+import { YachtsModule } from './yachts/yachts.module';
 
 @Module({
   imports: [
@@ -12,7 +16,8 @@ import { join } from 'path';
     TypeOrmModule.forRoot(),
     ServeStaticModule.forRoot({
       rootPath:join(__dirname, '..','avatars')
-    })
+    }),
+    YachtsModule
   ],
   controllers: [AppController],
   providers: [AppService],
