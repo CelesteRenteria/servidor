@@ -8,8 +8,8 @@ export class FeatureEntity {
     @Column({length:50})
     name:string;
    
-    @Column()
-    number:number;
+    @Column({length:5})
+    number:string;
 
     @Column({length:50})
     type:string;
