@@ -25,7 +25,7 @@ import { FeaturesModule } from './features/features.module';
     FeaturesModule
     
   ],
-  controllers: [AppController, FeaturesController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
