@@ -14,6 +14,6 @@ export class FeatureEntity {
     @Column({length:50})
     type:string;
    
-    @Column({length:300})
+    @Column({length:500})
     description:string;
 }
