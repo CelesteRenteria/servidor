@@ -9,6 +9,8 @@ import { YachtsController } from './yachts/yachts.controller';
 import { ServicesController } from './services/services.controller';
 import { CrewsController } from './crews/crews.controller';
 import { YachtsModule } from './yachts/yachts.module';
+import { CrewsModule } from './crews/crews.module';
+import { ServicesModule } from './services/services.module';
 
 @Module({
   imports: [
@@ -17,7 +19,9 @@ import { YachtsModule } from './yachts/yachts.module';
     ServeStaticModule.forRoot({
       rootPath:join(__dirname, '..','avatars')
     }),
-    YachtsModule
+    YachtsModule,
+    CrewsModule,
+    ServicesModule
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -17,7 +17,7 @@ export class YachtsController {
         return this.service.getAllYachts();
     }
     
-    @Get(':id')//El paramatro va en la misma direccion
+    @Get(':id')//El parametro va en la misma direccion
     getUser(@Param() params){
         return this.service.getYacht(params.id);
     }
