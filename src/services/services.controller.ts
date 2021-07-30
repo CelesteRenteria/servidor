@@ -20,19 +20,19 @@ export class ServicesController {
     }
 
     @Post()
-    addUser(@Body()servicee:ServiceEntity){
-        this.service.createService(servicee);
+    addUser(@Body()servicio:ServiceEntity){
+        this.service.createService(servicio);
+        
         return{
             status:HttpStatus.OK,
-            message:"The image has been uploaded",
-            data:servicee
+            data:servicio
         }
     }
 
 
     @Put()
-    updateUser(@Body() servicee:ServiceEntity){
-    this.service.updateService(servicee);
+    updateUser(@Body() servicio:ServiceEntity){
+    this.service.updateService(servicio);
     }
 
     //@Patch(atributo:string){

@@ -22,15 +22,15 @@ export class ServicesService {
 
     }
 
-    async updateService(service:ServiceEntity){
-        await this.rep.update({id_service:service.id_service},service);
+    async updateService(servicio:ServiceEntity){
+        await this.rep.update({id_service:servicio.id_service},servicio);
     }
 
-    async deleteService(service:ServiceEntity){
-        await this.rep.delete(service);
+    async deleteService(servicio:ServiceEntity){
+        await this.rep.delete(servicio);
     }
 
-    async createService(service:ServiceEntity){
-        await this.rep.insert(service);
+    async createService(servicio:ServiceEntity){
+        await this.rep.insert(servicio);
     }
 }
