@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpStatus, Param, Post, Put } from '@nestjs/common';
 import { ServiceEntity } from './service.entity';
 import { ServicesService } from './services.service';
 
@@ -22,6 +22,11 @@ export class ServicesController {
     @Post()
     addUser(@Body()service:ServiceEntity){
         this.service.createService(service);
+        return{
+            status:HttpStatus.OK,
+            message:"The image has been uploaded",
+            data:service
+        }
     }
 
 
