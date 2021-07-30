@@ -14,6 +14,6 @@ export class ServiceEntity {
     @Column({length:20})
     type:string;
     
-    @Column({length:200})
+    @Column({length:300})
     description:string;
 }

@@ -5,6 +5,7 @@ import { ServiceEntity } from './service.entity';
 
 @Injectable()
 export class ServicesService {
+    
     constructor(@InjectRepository(ServiceEntity)private rep:Repository<ServiceEntity>){
     }
 
