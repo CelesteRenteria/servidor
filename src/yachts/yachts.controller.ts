@@ -13,7 +13,7 @@ export class YachtsController {
     }
 
     @Get()
-    getAllUsers(){
+    getAll(){
         return this.service.getAllYachts();
     }
     
@@ -55,7 +55,7 @@ export class YachtsController {
     }
 
     @Put()
-    updateUser(@Body() yacht:YachtEntity){
+    updateY(@Body() yacht:YachtEntity){
     this.service.updateYacht(yacht);
     }
 
@@ -64,7 +64,7 @@ export class YachtsController {
     //}
 
     @Delete(":id")
-    deleteUser(@Param() params){
+    deleteY(@Param() params){
         this.service.deleteYacht(params.id);
         
     }

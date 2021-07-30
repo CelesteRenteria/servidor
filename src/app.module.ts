@@ -9,6 +9,8 @@ import { YachtsController } from './yachts/yachts.controller';
 import { CrewsController } from './crews/crews.controller';
 import { YachtsModule } from './yachts/yachts.module';
 import { CrewsModule } from './crews/crews.module';
+import { FeaturesController } from './features/features.controller';
+import { FeaturesModule } from './features/features.module';
 
 
 @Module({
@@ -19,10 +21,11 @@ import { CrewsModule } from './crews/crews.module';
       rootPath:join(__dirname, '..','avatars')
     }),
     YachtsModule,
-    CrewsModule
+    CrewsModule,
+    FeaturesModule
     
   ],
-  controllers: [AppController],
+  controllers: [AppController, FeaturesController],
   providers: [AppService],
 })
 export class AppModule {}
