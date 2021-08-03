@@ -13,10 +13,6 @@ export class YachtEntity {
 
  @Column({length:200})
  image:string;
-
- @Column({length:200})
- avatar:string;
-
 }
 
 
