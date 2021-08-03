@@ -29,10 +29,6 @@ export class CrewsController {
     this.service.updateCrewMember(yacht);
     }
 
-    //@Patch(atributo:string){
-    //    return "Actualizacion de Atributo"
-    //}
-
     @Delete(":id")
     deleteUser(@Param() params){
         this.service.deleteCrewMember(params.id);

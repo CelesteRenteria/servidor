@@ -59,10 +59,6 @@ export class YachtsController {
     this.service.updateYacht(yacht);
     }
 
-    //@Patch(atributo:string){
-    //    return "Actualizacion de Atributo"
-    //}
-
     @Delete(":id")
     deleteY(@Param() params){
         this.service.deleteYacht(params.id);
